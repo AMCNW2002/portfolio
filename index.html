@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMC Sandaruwan Full Stack Software Engineer</title>
+  <meta name="description"
+    content="Portfolio of AMC Sandaruwan â€” HND in Information Technology student, Flutter & Laravel developer building sales, inventory and mobile systems from Sri Lanka.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <div class="loader-code">
+      <span class="loader-bracket">&lt;</span>
+      <span class="loader-name">AMC</span>
+      <span class="loader-bracket">/&gt;</span>
+    </div>
+  </div>
+
+  <!-- Background ambience -->
+  <div class="bg-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>AMC<span class="logo-accent">.dev</span><span
+          class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+          <i data-lucide="moon" class="icon-moon"></i>
+          <i data-lucide="sun" class="icon-sun"></i>
+        </button>
+        <a href="assets/AMC%20Sandaruwan%20CV%20(1).pdf" download="AMC_Sandaruwan_CV.pdf" class="btn btn-primary btn-sm"
+          target="_blank">
+          <i data-lucide="download"></i> Download CV
+        </a>
+        <button class="nav-burger" id="navBurger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-copy reveal-up">
+          <p class="eyebrow"><span class="status-dot"></span> Available for opportunities Â· Sri Lanka</p>
+
+          <h1 class="hero-title">
+            <img src="assets/my%20pic.jpeg" alt="AMC Sandaruwan" class="hero-avatar-inline"> Hi, I'm <br>
+            <span class="grad-text">AMC Sandaruwan</span>
+          </h1>
+
+          <p class="hero-role">
+            <span id="typedRole"></span><span class="typed-cursor">|</span>
+          </p>
+
+          <p class="hero-desc">
+            I’m an Information Technology undergraduate at SLIATE and an aspiring Full Stack Developer with a strong
+            problem-solving mindset. I enjoy understanding real-world problems and turning them into simple, practical,
+            and user-friendly digital solutions.<br><br>
+
+            I build Flutter mobile applications and Laravel-powered web systems, while continuously learning and
+            exploring new technologies. I’m passionate about creating software that not only works, but also makes
+            everyday tasks easier and delivers real value to users and businesses.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="folder-code"></i> View Projects
+            </a>
+            <a href="assets/AMC%20Sandaruwan%20CV%20(1).pdf" download="AMC_Sandaruwan_CV.pdf" class="btn btn-outline"
+              target="_blank">
+              <i data-lucide="file-down"></i> Download CV
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i data-lucide="send"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num" data-count="4">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Full-stack projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="12">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Technologies used</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="2">0</span>
+              <span class="stat-label">Core stacks Flutter &amp; Laravel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-up delay-1">
+          <div class="editor-window">
+            <div class="editor-titlebar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="editor-filename">developer.dart</span>
+            </div>
+            <pre class="editor-body"><code><span class="c-key">class</span> <span class="c-class">Developer</span> {
+  <span class="c-key">final</span> <span class="c-type">String</span> name = <span class="c-str">'AMC Sandaruwan'</span>;
+  <span class="c-key">final</span> <span class="c-type">String</span> role = <span class="c-str">'Full Stack Engineer'</span>;
+
+  <span class="c-key">final</span> <span class="c-type">List&lt;String&gt;</span> stack = [
+    <span class="c-str">'Flutter'</span>, <span class="c-str">'Laravel'</span>,
+    <span class="c-str">'Firebase'</span>, <span class="c-str">'MySQL'</span>,
+  ];
+
+  <span class="c-type">bool</span> get <span class="c-fn">isBuilding</span>() =&gt; <span class="c-key">true</span>;
+  <span class="c-type">bool</span> get <span class="c-fn">lovesCleanCode</span>() =&gt; <span class="c-key">true</span>;
+}</code></pre>
+            <div class="editor-status">
+              <span><i data-lucide="git-branch"></i> main</span>
+              <span class="editor-status-right"><i data-lucide="check-circle-2"></i> No problems</span>
+            </div>
+          </div>
+          <div class="float-badge badge-1"><i data-lucide="smartphone"></i> Flutter</div>
+          <div class="float-badge badge-2"><i data-lucide="server"></i> Laravel</div>
+          <div class="float-badge badge-3"><i data-lucide="database"></i> Firebase</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span>Scroll</span>
+        <i data-lucide="chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <p class="eyebrow center">About</p>
+      <h2 class="section-title center reveal-up">The Engineer Behind the Code</h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal-up">
+          <p>
+            I’m an Information Technology student passionate about software development, mobile applications, and web
+            technologies. I enjoy solving problems and building simple, practical solutions that make everyday work
+            easier.<br><br>
+
+            I’m continuously improving my skills by working on real-world projects and exploring new technologies. My
+            goal is to grow as a software developer while creating useful and reliable digital solutions.
+
+          </p>
+        </div>
+
+        <div class="about-cards">
+          <div class="glass-card about-card reveal-up">
+            <i data-lucide="graduation-cap"></i>
+            <h3>Education</h3>
+            <p>> HND in Information Technology SLIATE<br>
+              > ST.Thomes College,Matara <br>(A/L 2021 Biology Stream)
+            </p>
+          </div>
+          <div class="glass-card about-card reveal-up delay-1">
+            <i data-lucide="target"></i>
+            <h3>Career Goal</h3>
+            <p>Become a professional Full Stack Software Engineer</p>
+          </div>
+          <div class="glass-card about-card reveal-up delay-2">
+            <i data-lucide="map-pin"></i>
+            <h3>Location</h3>
+            <p>Sri Lanka</p>
+          </div>
+          <div class="glass-card about-card reveal-up delay-3">
+            <i data-lucide="languages"></i>
+            <h3>Languages</h3>
+            <p>Sinhala, English</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <p class="eyebrow center">Skills</p>
+      <h2 class="section-title center reveal-up">Tools I Build With</h2>
+      <p class="section-sub center reveal-up">Grouped the way I actually use them by role in the stack, not
+        alphabetically.</p>
+
+      <div class="skills-tabs reveal-up">
+        <button class="tab-btn active" data-tab="mobile">Mobile</button>
+        <button class="tab-btn" data-tab="backend">Backend &amp; Data</button>
+        <button class="tab-btn" data-tab="web">Web &amp; Tools</button>
+      </div>
+
+      <div class="skills-panels">
+        <div class="skills-panel active" data-panel="mobile">
+          <div class="skill-row" data-level="90"><span class="skill-name">Flutter</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-row" data-level="85"><span class="skill-name">Dart</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-row" data-level="80"><span class="skill-name">Responsive UI Design</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">80%</span>
+          </div>
+        </div>
+        <div class="skills-panel" data-panel="backend">
+          <div class="skill-row" data-level="85"><span class="skill-name">Laravel</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-row" data-level="80"><span class="skill-name">PHP</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-row" data-level="82"><span class="skill-name">Firebase</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">82%</span>
+          </div>
+          <div class="skill-row" data-level="75"><span class="skill-name">MongoDB</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-row" data-level="80"><span class="skill-name">MySQL</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-row" data-level="78"><span class="skill-name">REST API</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">78%</span>
+          </div>
+        </div>
+        <div class="skills-panel" data-panel="web">
+          <div class="skill-row" data-level="80"><span class="skill-name">JavaScript</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-row" data-level="90"><span class="skill-name">HTML5</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-row" data-level="85"><span class="skill-name">CSS3</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-row" data-level="82"><span class="skill-name">Git &amp; GitHub</span>
+            <div class="skill-track">
+              <div class="skill-fill"></div>
+            </div><span class="skill-pct">82%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-skills reveal-up">
+        <span class="chip"><i data-lucide="puzzle"></i> Problem Solving</span>
+        <span class="chip"><i data-lucide="users"></i> Teamwork</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <p class="eyebrow center">Projects</p>
+      <h2 class="section-title center reveal-up">Things I’ve Built</h2>
+      <p class="section-sub center reveal-up">Building practical digital solutions to solve real-world problems.</p>
+
+      <div class="project-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="glass-card project-card reveal-up" data-cat="mobile">
+          <div class="project-thumb">
+            <img src="assets/salepro.jpeg" alt="SalesFlow">
+            <span class="project-index">01</span>
+          </div>
+          <div class="project-body">
+            <h3>SalesFlow</h3>
+            <p class="project-tag">Sales &amp; Distribution Management System</p>
+            <p class="project-desc">
+              A complete sales and distribution app with Admin, Sales
+              Representative and Customer roles, order management, payment
+              tracking, dashboards and reports.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Firebase</span>
+              <span class="tech-badge">REST API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002/salepro" class="btn btn-outline btn-sm"><i data-lucide="github"></i>
+                GitHub</a>
+              <a href="https://youtube.com/shorts/FKArF3VEJRQ?si=Eu25f70VJqh5y1pG" class="btn btn-primary btn-sm"><i
+                  data-lucide="external-link"></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-up delay-1" data-cat="web">
+          <div class="project-thumb">
+            <img src="assets/garb.jpg" alt="Garbage Management System">
+            <span class="project-index">02</span>
+          </div>
+          <div class="project-body">
+            <h3>Garbage Management System</h3>
+            <p class="project-tag">Waste Collection & Tracking Platform</p>
+            <p class="project-desc">
+              Garbage collection and tracking platform for municipal operations &mdash;
+              waste scheduling, vehicle tracking, reporting and analytics.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Bootstrap</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002/EcoTrack" class="btn btn-outline btn-sm"><i
+                  data-lucide="github"></i> GitHub</a>
+              <a href="https://youtu.be/Q2GaP8cKTSc?si=nZWryQSHnDuj630z" class="btn btn-primary btn-sm"><i
+                  data-lucide="external-link"></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-up delay-2" data-cat="mobile">
+          <div class="project-thumb">
+            <img src="assets/attendpro.jpeg" alt="AttendFlow">
+            <span class="project-index">03</span>
+          </div>
+          <div class="project-body">
+            <h3>AttendFlow</h3>
+            <p class="project-tag">Attendance Management App</p>
+            <p class="project-desc">
+              A simple attendance management mobile application for recording
+              daily attendance, with dashboard statistics for quick overview.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Dart</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002/attendpro2" class="btn btn-outline btn-sm"><i
+                  data-lucide="github"></i> GitHub</a>
+              <a href="https://youtube.com/shorts/uWZHXuTnygs?si=RR7VJw9w0FKIWWxu" class="btn btn-primary btn-sm"><i
+                  data-lucide="external-link"></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-up" data-cat="web">
+          <div class="project-thumb">
+            <i data-lucide="shield-check"></i>
+            <span class="project-index">04</span>
+          </div>
+          <div class="project-body">
+            <h3>Worker Safety & Compliance System(Current project-at Labor Department)</h3>
+            <p class="project-tag">Safety &amp; Compliance Platform</p>
+            <p class="project-desc">
+              A web-based system developed to help companies manage workplace safety policies, employee safety records,
+              incidents, and regulatory compliance efficiently.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge">Web</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-outline btn-sm"><i data-lucide="github"></i> GitHub</a>
+              <a href="#" class="btn btn-primary btn-sm"><i data-lucide="external-link"></i> Live Demo comming soon</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="github-repos-section reveal-up">
+        <div class="github-header">
+          <h3 class="section-title" style="font-size: 24px; margin-bottom: 8px;">Latest GitHub Repositories</h3>
+          <p class="section-sub">Automatically synced from my GitHub profile.</p>
+        </div>
+        <div class="github-grid" id="githubReposGrid">
+          <div class="github-loading"><i data-lucide="loader-2" class="spin"></i> Loading repositories...</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <p class="eyebrow center">Contact</p>
+      <h2 class="section-title center reveal-up">Let's Build Something</h2>
+      <p class="section-sub center reveal-up">Have a project in mind, or an opportunity to discuss? Send a message.</p>
+
+      <div class="contact-grid">
+        <form class="glass-card contact-form reveal-up" id="contactForm" action="https://api.web3forms.com/submit"
+          method="POST">
+          <input type="hidden" name="access_key" value="15cc6263-c413-4690-8b4b-9b963f7a1cdd">
+          <div class="form-row">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+          </div>
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="What's this about?" required>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell me a bit about it..." required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary" id="sendBtn">
+            <i data-lucide="send"></i> Send Message
+          </button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+
+        <div class="contact-info reveal-up delay-1">
+          <a href="mailto:chamindusandaruwan818@gmail.com" class="glass-card contact-item">
+            <i data-lucide="mail"></i>
+            <div><span>Email</span>
+              <p>chamindusandaruwan818@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+94700000000" class="glass-card contact-item">
+            <i data-lucide="phone"></i>
+            <div><span>Phone</span>
+              <p>+94 77 245 9526</p>
+            </div>
+          </a>
+          <div class="glass-card contact-item">
+            <i data-lucide="map-pin"></i>
+            <div><span>Location</span>
+              <p>Sri Lanka</p>
+            </div>
+          </div>
+          <div class="creative-social">
+            <a href="https://wa.me/94772459526" target="_blank" class="c-btn c-btn-wa">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+              </svg>
+              WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/amc-sandaruwan-b63943389" target="_blank" class="c-btn c-btn-li">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#home" class="logo footer-logo">
+        <span class="logo-bracket">&lt;</span>AMC<span class="logo-accent">.dev</span><span
+          class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="social-row">
+        <a href="https://wa.me/94772459526" target="_blank" class="social-icon" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+            <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/amc-sandaruwan-b63943389" target="_blank" class="social-icon"
+          aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        <a href="https://github.com/AMCNW2002" target="_blank" class="social-icon" aria-label="GitHub"><i
+            data-lucide="github"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">AMC Sandaruwan Â· Â© 2026 All rights reserved.</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
