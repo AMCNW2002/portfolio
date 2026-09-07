@@ -224,6 +224,56 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
+  /* ---------- github project count fetch ---------- */
+  const githubProjectCountEl = document.getElementById('github-project-count');
+  if (githubProjectCountEl) {
+    fetch('https://api.github.com/users/AMCNW2002')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.public_repos !== undefined) {
+          const target = data.public_repos;
+          githubProjectCountEl.dataset.count = target;
+          
+          if (githubProjectCountEl.textContent !== "0") {
+            let val = parseInt(githubProjectCountEl.textContent, 10) || 0;
+            const step = Math.max(1, Math.round(target / 40));
+            const tick = () => {
+              val = Math.min(target, val + step);
+              githubProjectCountEl.textContent = val;
+              if (val < target) requestAnimationFrame(tick);
+            };
+            tick();
+          }
+        }
+      })
+      .catch(err => console.error('Error fetching GitHub user data:', err));
+  }
+
+  /* ---------- portfolio views count fetch ---------- */
+  const portfolioViewsCountEl = document.getElementById('portfolio-views-count');
+  if (portfolioViewsCountEl) {
+    fetch('https://abacus.jasoncameron.dev/hit/amcnw2002/portfolio')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.value !== undefined) {
+          const target = 100 + data.value;
+          portfolioViewsCountEl.dataset.count = target;
+          
+          if (portfolioViewsCountEl.textContent !== "0") {
+            let val = parseInt(portfolioViewsCountEl.textContent, 10) || 0;
+            const step = Math.max(1, Math.round(target / 40));
+            const tick = () => {
+              val = Math.min(target, val + step);
+              portfolioViewsCountEl.textContent = val;
+              if (val < target) requestAnimationFrame(tick);
+            };
+            tick();
+          }
+        }
+      })
+      .catch(err => console.error('Error fetching portfolio views:', err));
+  }
+
   /* ---------- github repos fetch ---------- */
   const githubGrid = document.getElementById('githubReposGrid');
   if (githubGrid) {
