@@ -854,7 +854,7 @@ p {
 .about-text p {
   color: var(--text-muted);
   margin-bottom: 18px;
-  font-size: 16px;
+  font-size: 14px;
   text-align: justify;
 }
 
