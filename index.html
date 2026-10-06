@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -108,7 +108,7 @@
 
           <div class="hero-role-box">
             <span class="role-terminal-icon">&gt;</span>
-            <span class="hero-role" id="typedRole"></span><span class="typed-cursor">_</span>
+            <span class="hero-role" id="typedRole">Full Stack Developer / Software Developer</span><span class="typed-cursor">_</span>
           </div>
 
           <p class="hero-desc">
@@ -156,8 +156,15 @@
         </div>
 
         <div class="hero-visual reveal-up delay-1">
+          <div class="hero-orbit-scene" aria-hidden="true">
+            <span class="orbit-ring orbit-ring-one"></span>
+            <span class="orbit-ring orbit-ring-two"></span>
+            <span class="orbit-core"></span>
+            <span class="orbit-spark orbit-spark-one"></span>
+            <span class="orbit-spark orbit-spark-two"></span>
+          </div>
           <!-- Main Profile & Showcase Card -->
-          <div class="hero-showcase-card">
+          <div class="hero-showcase-card" data-tilt>
             
             <div class="showcase-header">
               <div class="showcase-profile">
@@ -745,7 +752,7 @@
         <!-- Project 4: Worker Safety & Compliance -->
         <article class="glass-card project-card reveal-up" data-cat="web">
           <div class="project-thumb">
-            <img src="assets/worker_safety.jpg" alt="Worker Safety & Compliance Dashboard" loading="lazy">
+            <img src="assets/worker_safety.jpg" alt="Factory Document & Safety Management System" loading="lazy">
             <div class="project-thumb-overlay">
               <span class="project-cat-badge"><i data-lucide="shield-check"></i> Enterprise Web</span>
               <span class="project-index">04</span>
@@ -753,12 +760,12 @@
           </div>
           <div class="project-body">
             <div class="project-title-row">
-              <h3>Worker Safety &amp; Compliance</h3>
-              <span class="project-status enterprise">Labour Dept.Production</span>
+              <h3>Factory Document &amp; Safety Management System</h3>
+              <span class="project-status enterprise">Production</span>
             </div>
             <p class="project-tag">Workplace Health, Safety &amp; Audit Platform</p>
             <p class="project-desc">
-              Developed in engagement with the Department of Labour to digitize workplace regulatory standards, maintain strict safety records, log hazardous incidents, conduct periodic safety audits, and safeguard labor welfare across industrial facilities.
+              A web-based Factory Safety & Documentation Management System developed for the Department of Labour to manage factory documentation, safety records, inspections, and regulatory compliance.
             </p>
             <div class="badge-row">
               <span class="tech-badge"><i data-lucide="terminal"></i> PHP</span>

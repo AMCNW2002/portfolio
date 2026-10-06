@@ -56,6 +56,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- 2.5. LIGHTWEIGHT POINTER DEPTH (DESKTOP ONLY) ---------- */
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  if (!motionPreference.matches && finePointer.matches) {
+    document.querySelectorAll('[data-tilt], .project-card').forEach(card => {
+      let frame = 0;
+
+      card.addEventListener('pointermove', event => {
+        if (frame) cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const bounds = card.getBoundingClientRect();
+          const x = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+          const y = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+          const tiltX = (0.5 - y) * 5;
+          const tiltY = (x - 0.5) * 7;
+
+          card.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
+          card.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
+          card.style.setProperty('--pointer-x', `${(x * 100).toFixed(1)}%`);
+          card.style.setProperty('--pointer-y', `${(y * 100).toFixed(1)}%`);
+
+          const heroVisual = card.closest('.hero-visual');
+          if (heroVisual) {
+            heroVisual.style.setProperty('--orbit-x', `${((0.5 - x) * 12).toFixed(1)}px`);
+            heroVisual.style.setProperty('--orbit-y', `${((0.5 - y) * 12).toFixed(1)}px`);
+          }
+        });
+      });
+
+      card.addEventListener('pointerleave', () => {
+        if (frame) cancelAnimationFrame(frame);
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+
+        const heroVisual = card.closest('.hero-visual');
+        if (heroVisual) {
+          heroVisual.style.setProperty('--orbit-x', '0px');
+          heroVisual.style.setProperty('--orbit-y', '0px');
+        }
+      });
+    });
+  }
+
   /* ---------- 3. SHOWCASE CODE TABS SWITCHER ---------- */
   const codeTabs = document.querySelectorAll('.code-tab');
   const codePanels = document.querySelectorAll('.code-panel');
@@ -228,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- 9. TYPING ANIMATION ---------- */
   const roles = [
+    'Full Stack Developer / Software Developer',
     'Flutter Mobile Engineer',
     'Laravel Backend Developer',
     'Full Stack Web & Mobile Architect',
@@ -235,8 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const typedEl = document.getElementById('typedRole');
   let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+  let charIndex = roles[0].length;
+  let isDeleting = true;
 
   function typeLoop() {
     if (!typedEl) return;
@@ -260,7 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setTimeout(typeLoop, isDeleting ? 30 : 60);
   }
-  typeLoop();
+  if (typedEl) typedEl.textContent = roles[0];
+  setTimeout(typeLoop, 1800);
 
   /* ---------- 10. SCROLL REVEAL (INTERSECTION OBSERVER) ---------- */
   const revealObserver = new IntersectionObserver((entries) => {
