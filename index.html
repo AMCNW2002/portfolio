@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMC Sandaruwan — Full Stack Software Engineer | Flutter & Laravel</title>
+  <meta name="description"
+    content="Portfolio of AMC Sandaruwan — Full Stack Software Engineer specializing in Flutter mobile apps, Laravel web applications, Firebase, and scalable API systems based in Sri Lanka.">
+  <meta name="keywords" content="AMC Sandaruwan, Full Stack Developer, Flutter Developer, Laravel Developer, Mobile App Developer Sri Lanka, Software Engineer">
+  <meta name="author" content="AMC Sandaruwan">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AMC Sandaruwan — Full Stack Software Engineer">
+  <meta property="og:description"
+    content="Full Stack Software Engineer building high-performance Flutter mobile apps and Laravel web platforms.">
+  <meta property="og:image" content="assets/my%20pic.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <div class="loader-code">
+      <span class="loader-bracket">&lt;</span>
+      <span class="loader-name">AMC</span>
+      <span class="loader-bracket">/&gt;</span>
+    </div>
+    <div class="loader-bar"><span class="loader-progress"></span></div>
+  </div>
+
+  <!-- Background ambience -->
+  <div class="bg-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="logo" aria-label="AMC Sandaruwan Homepage">
+        <span class="logo-bracket">&lt;</span><span class="logo-text">AMC</span><span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <div class="mobile-nav-actions">
+          <a href="assets/AMC%20Sandaruwan%20CV%20(1).pdf" download="AMC_Sandaruwan_CV.pdf" class="btn btn-primary btn-sm" target="_blank">
+            <i data-lucide="download"></i> Download CV
+          </a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode" title="Toggle theme">
+          <i data-lucide="moon" class="icon-moon"></i>
+          <i data-lucide="sun" class="icon-sun"></i>
+        </button>
+        <a href="assets/AMC%20Sandaruwan%20CV%20(1).pdf" download="AMC_Sandaruwan_CV.pdf" class="btn btn-primary btn-sm nav-cv-btn" target="_blank">
+          <i data-lucide="download"></i> Download CV
+        </a>
+        <button class="nav-burger" id="navBurger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav backdrop overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-copy reveal-up">
+          <div class="eyebrow-wrapper">
+            <div class="eyebrow">
+              <span class="status-dot"></span>
+              <span>Available for Opportunities</span>
+              <span class="eyebrow-sep">·</span>
+              <span class="eyebrow-loc"><i data-lucide="map-pin"></i> Sri Lanka</span>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-greeting">Hi, I'm</span>
+            <span class="grad-text hero-name">AMC Sandaruwan</span>
+          </h1>
+
+          <div class="hero-role-box">
+            <span class="role-terminal-icon">&gt;</span>
+            <span class="hero-role" id="typedRole"></span><span class="typed-cursor">_</span>
+          </div>
+
+          <p class="hero-desc">
+            I’m an Information Technology undergraduate at <strong>SLIATE</strong> and an ambitious <strong>Full Stack Software Engineer</strong>. I specialize in turning complex real-world requirements into intuitive, elegant, and high-performance digital solutions across mobile and web.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="folder-code"></i> View Projects
+            </a>
+            <a href="assets/AMC%20Sandaruwan%20CV%20(1).pdf" download="AMC_Sandaruwan_CV.pdf" class="btn btn-outline" target="_blank">
+              <i data-lucide="file-down"></i> Download CV
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i data-lucide="send"></i> Let's Talk
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-num-row">
+                <span class="stat-num" id="github-project-count" data-count="4">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Full-Stack Projects</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num-row">
+                <span class="stat-num" data-count="12">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Technologies Mastered</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num-row">
+                <span class="stat-num" data-count="2">0</span>
+              </div>
+              <span class="stat-label">Core Stacks (Flutter &amp; Laravel)</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num-row">
+                <span class="stat-num" id="portfolio-views-count" data-count="100">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Portfolio Views</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-up delay-1">
+          <!-- Main Profile & Showcase Card -->
+          <div class="hero-showcase-card">
+            
+            <div class="showcase-header">
+              <div class="showcase-profile">
+                <div class="avatar-ring">
+                  <img src="assets/my%20pic.jpeg" alt="AMC Sandaruwan" class="showcase-avatar">
+                  <span class="avatar-status-badge" title="Open to Work"></span>
+                </div>
+                <div class="showcase-meta">
+                  <h2 class="showcase-name">AMC Sandaruwan</h2>
+                  <p class="showcase-sub">Full Stack Software Engineer</p>
+                </div>
+              </div>
+              <div class="showcase-tabs">
+                <button class="code-tab active" data-tab="dart">developer.dart</button>
+                <button class="code-tab" data-tab="php">api.php</button>
+              </div>
+            </div>
+
+            <!-- Code Windows -->
+            <div class="editor-window code-panel active" id="code-dart">
+              <div class="editor-titlebar">
+                <div class="window-dots">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                </div>
+                <span class="editor-filename">lib/developer.dart</span>
+                <span class="editor-lang-pill">Dart 3.x</span>
+              </div>
+              <pre class="editor-body"><code><span class="c-key">class</span> <span class="c-class">Developer</span> {
+  <span class="c-key">final</span> <span class="c-type">String</span> name = <span class="c-str">'AMC Sandaruwan'</span>;
+  <span class="c-key">final</span> <span class="c-type">String</span> location = <span class="c-str">'Sri Lanka'</span>;
+  <span class="c-key">final</span> <span class="c-type">List&lt;String&gt;</span> stack = [
+    <span class="c-str">'Flutter'</span>, <span class="c-str">'Laravel'</span>,
+    <span class="c-str">'Firebase'</span>, <span class="c-str">'MySQL'</span>,
+  ];
+
+  <span class="c-type">bool</span> get <span class="c-fn">isAvailableForHire</span>() =&gt; <span class="c-key">true</span>;
+  <span class="c-type">void</span> <span class="c-fn">buildAwesomeApps</span>() =&gt; <span class="c-fn">deliverValue</span>();
+}</code></pre>
+              <div class="editor-status">
+                <span><i data-lucide="git-branch"></i> main</span>
+                <span class="editor-status-right"><i data-lucide="check-circle-2"></i> All checks passed</span>
+              </div>
+            </div>
+
+            <div class="editor-window code-panel" id="code-php">
+              <div class="editor-titlebar">
+                <div class="window-dots">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                </div>
+                <span class="editor-filename">routes/api.php</span>
+                <span class="editor-lang-pill">PHP 8.2</span>
+              </div>
+              <pre class="editor-body"><code><span class="c-key">use</span> <span class="c-class">App\Http\Controllers\PortfolioController</span>;
+
+<span class="c-class">Route</span>::<span class="c-fn">prefix</span>(<span class="c-str">'v1/developer'</span>)-&gt;<span class="c-fn">group</span>(<span class="c-key">function</span> () {
+  <span class="c-class">Route</span>::<span class="c-fn">get</span>(<span class="c-str">'/status'</span>, <span class="c-key">fn</span>() =&gt; [
+    <span class="c-str">'developer'</span> =&gt; <span class="c-str">'AMC Sandaruwan'</span>,
+    <span class="c-str">'status'</span>    =&gt; <span class="c-str">'Ready for high-impact roles'</span>,
+    <span class="c-str">'response'</span>  =&gt; <span class="c-key">200</span>
+  ]);
+});</code></pre>
+              <div class="editor-status">
+                <span><i data-lucide="server"></i> Laravel 11.x</span>
+                <span class="editor-status-right"><i data-lucide="check-circle-2"></i> API healthy</span>
+              </div>
+            </div>
+
+            <!-- Floating Badges in showcase container -->
+            <div class="floating-badges-container">
+              <div class="float-badge badge-flutter"><i data-lucide="smartphone"></i> Flutter</div>
+              <div class="float-badge badge-laravel"><i data-lucide="server"></i> Laravel</div>
+              <div class="float-badge badge-firebase"><i data-lucide="database"></i> Firebase</div>
+              <div class="float-badge badge-mysql"><i data-lucide="layers"></i> MySQL</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span>Explore Portfolio</span>
+        <i data-lucide="chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-header center">
+        <p class="eyebrow center"><span>About AMC</span></p>
+        <h2 class="section-title center reveal-up">The Engineer Behind the Code</h2>
+        <p class="section-sub center reveal-up">
+          Merging software engineering foundations with pragmatic product problem-solving.
+        </p>
+      </div>
+
+      <div class="about-bento reveal-up">
+        
+        <!-- Story Card -->
+        <div class="glass-card bento-card bento-story">
+          <div class="bento-icon-tag"><i data-lucide="code-2"></i> Engineering Philosophy</div>
+          <h3>Driven by Purpose, Built for Impact</h3>
+          <p>
+            I’m an Information Technology undergraduate at <strong>SLIATE</strong> who is deeply captivated by the art and logic of software development. Rather than writing code for code’s sake, I focus on deeply understanding real-world operational challenges—from municipal waste logistics to retail distribution and workplace compliance.
+          </p>
+          <p>
+            My engineering toolkit centers on <strong>Flutter</strong> for fluid, responsive mobile interfaces and <strong>Laravel &amp; PHP</strong> for robust, scalable backend APIs. I am constantly expanding my knowledge, seeking opportunities where my code drives measurable user and business value.
+          </p>
+        </div>
+
+        <!-- Education Card -->
+        <div class="glass-card bento-card bento-edu">
+          <div class="bento-icon-tag"><i data-lucide="graduation-cap"></i> Academic Journey</div>
+          <div class="edu-item">
+            <span class="edu-badge">Undergraduate</span>
+            <h4>HND in Information Technology</h4>
+            <p class="edu-inst">SLIATE (Sri Lanka Institute of Advanced Technological Education)</p>
+            <p class="edu-desc">Comprehensive training in software engineering, database design, networking, and OOP.</p>
+          </div>
+          <div class="edu-divider"></div>
+          <div class="edu-item">
+            <span class="edu-badge">Secondary Education</span>
+            <h4>St. Thomas' College, Matara</h4>
+            <p class="edu-inst">G.C.E. Advanced Level (2021) — Biology Stream</p>
+          </div>
+        </div>
+
+        <!-- Core Stack Card -->
+        <div class="glass-card bento-card bento-stack">
+          <div class="bento-icon-tag"><i data-lucide="cpu"></i> Core Specialization</div>
+          <h4>Full Stack Synergy</h4>
+          <p>End-to-end software delivery from responsive front-end UI design to secure cloud databases and RESTful APIs.</p>
+          <div class="stack-pills">
+            <span class="s-pill"><i data-lucide="smartphone"></i> Flutter Mobile</span>
+            <span class="s-pill"><i data-lucide="server"></i> Laravel Backend</span>
+            <span class="s-pill"><i data-lucide="database"></i> Firebase &amp; SQL</span>
+            <span class="s-pill"><i data-lucide="git-branch"></i> Git &amp; CI Workflows</span>
+          </div>
+        </div>
+
+        <!-- Location & Timezone Card -->
+        <div class="glass-card bento-card bento-loc">
+          <div class="bento-icon-tag"><i data-lucide="globe"></i> Timezone &amp; Base</div>
+          <h4>Sri Lanka (UTC +05:30)</h4>
+          <div class="live-clock-box">
+            <div class="clock-indicator"></div>
+            <span id="localClock" class="clock-text">--:--:--</span>
+            <span class="clock-label">Local Time (GMT+5:30)</span>
+          </div>
+          <p class="loc-note">Collaborating with domestic and global remote teams smoothly.</p>
+        </div>
+
+        <!-- Languages Card -->
+        <div class="glass-card bento-card bento-lang">
+          <div class="bento-icon-tag"><i data-lucide="languages"></i> Communication</div>
+          <div class="lang-row">
+            <div class="lang-item">
+              <span class="lang-name">English</span>
+              <span class="lang-badge">Professional Working</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Sinhala</span>
+              <span class="lang-badge">Native Proficiency</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="glass-card bento-card bento-vision">
+          <div class="bento-icon-tag"><i data-lucide="compass"></i> Career Vision</div>
+          <h4>Professional Full Stack Engineer</h4>
+          <p>
+            Aiming to join an innovative technology team where I can architect enterprise-grade software, solve high-stakes problems, and continually raise the engineering bar.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section-header center">
+        <p class="eyebrow center"><span>Technical Expertise</span></p>
+        <h2 class="section-title center reveal-up">Tools &amp; Technologies I Master</h2>
+        <p class="section-sub center reveal-up">
+          Grouped by ecosystem role, reflecting hands-on production and project implementations.
+        </p>
+      </div>
+
+      <div class="skills-tabs reveal-up" role="tablist">
+        <button class="tab-btn active" data-tab="mobile" role="tab" aria-selected="true">
+          <i data-lucide="smartphone"></i> Mobile Engineering
+        </button>
+        <button class="tab-btn" data-tab="backend" role="tab" aria-selected="false">
+          <i data-lucide="server"></i> Backend &amp; Data
+        </button>
+        <button class="tab-btn" data-tab="web" role="tab" aria-selected="false">
+          <i data-lucide="layout"></i> Web &amp; Dev Tools
+        </button>
+      </div>
+
+      <div class="skills-panels-container">
+        <!-- Mobile Panel -->
+        <div class="skills-panel active" data-panel="mobile">
+          <div class="skills-grid">
+            <div class="glass-card skill-card" data-level="90">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="smartphone"></i></span>
+                  <div>
+                    <h4>Flutter Framework</h4>
+                    <span class="skill-sub">Cross-Platform iOS &amp; Android</span>
+                  </div>
+                </div>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Advanced</span>
+                <span class="skill-exp">Multi-screen apps, animations, state management</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="85">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="code"></i></span>
+                  <div>
+                    <h4>Dart Language</h4>
+                    <span class="skill-sub">OOP, Asynchronous Streams &amp; Concurrency</span>
+                  </div>
+                </div>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Clean architecture, Null-safety, Custom models</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="85">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="smartphone-charging"></i></span>
+                  <div>
+                    <h4>Responsive Mobile UI</h4>
+                    <span class="skill-sub">Adaptive Layouts &amp; Pixel Perfection</span>
+                  </div>
+                </div>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Phone, Tablet &amp; Foldable viewport adaptability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Panel -->
+        <div class="skills-panel" data-panel="backend">
+          <div class="skills-grid">
+            <div class="glass-card skill-card" data-level="85">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="server"></i></span>
+                  <div>
+                    <h4>Laravel Framework</h4>
+                    <span class="skill-sub">MVC Architecture &amp; RESTful APIs</span>
+                  </div>
+                </div>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Eloquent ORM, Middleware, Auth &amp; Routing</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="80">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="terminal"></i></span>
+                  <div>
+                    <h4>PHP (Object-Oriented)</h4>
+                    <span class="skill-sub">Backend Logic &amp; Web Services</span>
+                  </div>
+                </div>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Secure request handling, session management</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="82">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="cloud"></i></span>
+                  <div>
+                    <h4>Firebase Cloud Suite</h4>
+                    <span class="skill-sub">Firestore, Authentication &amp; Storage</span>
+                  </div>
+                </div>
+                <span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Realtime listeners, user security rules</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="82">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="database"></i></span>
+                  <div>
+                    <h4>MySQL Database</h4>
+                    <span class="skill-sub">Relational Schema &amp; Optimization</span>
+                  </div>
+                </div>
+                <span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Complex joins, normalization, indexing</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="75">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="file-json"></i></span>
+                  <div>
+                    <h4>MongoDB</h4>
+                    <span class="skill-sub">NoSQL Document Stores</span>
+                  </div>
+                </div>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Intermediate</span>
+                <span class="skill-exp">Flexible BSON schema, CRUD collections</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="82">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="network"></i></span>
+                  <div>
+                    <h4>RESTful API Architecture</h4>
+                    <span class="skill-sub">Integration &amp; Payload Serialization</span>
+                  </div>
+                </div>
+                <span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">HTTP endpoints, JWT authorization, Postman</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web & Tools Panel -->
+        <div class="skills-panel" data-panel="web">
+          <div class="skills-grid">
+            <div class="glass-card skill-card" data-level="82">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="file-code-2"></i></span>
+                  <div>
+                    <h4>JavaScript (ES6+)</h4>
+                    <span class="skill-sub">Modern DOM &amp; Async Programming</span>
+                  </div>
+                </div>
+                <span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Vanilla JS, Fetch API, dynamic components</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="90">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="code-xml"></i></span>
+                  <div>
+                    <h4>HTML5 &amp; Semantic Web</h4>
+                    <span class="skill-sub">Accessibility &amp; SEO Standards</span>
+                  </div>
+                </div>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Advanced</span>
+                <span class="skill-exp">Clean semantic hierarchy, WCAG accessibility</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="88">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="palette"></i></span>
+                  <div>
+                    <h4>Modern CSS3 &amp; Glassmorphism</h4>
+                    <span class="skill-sub">Responsive Design &amp; Keyframes</span>
+                  </div>
+                </div>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Flexbox, CSS Grid, custom properties, animations</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card" data-level="84">
+              <div class="skill-head">
+                <div class="skill-title-group">
+                  <span class="skill-icon-wrap"><i data-lucide="git-pull-request"></i></span>
+                  <div>
+                    <h4>Git &amp; GitHub</h4>
+                    <span class="skill-sub">Version Control &amp; Collaboration</span>
+                  </div>
+                </div>
+                <span class="skill-pct">84%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+              <div class="skill-footer">
+                <span class="skill-tag">Proficient</span>
+                <span class="skill-exp">Branching, merge workflows, repository hosting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Soft Skills / Engineering Principles -->
+      <div class="soft-skills reveal-up">
+        <span class="chip"><i data-lucide="puzzle"></i> Problem Solving</span>
+        <span class="chip"><i data-lucide="layers"></i> Clean Architecture</span>
+        <span class="chip"><i data-lucide="users"></i> Team Collaboration</span>
+        <span class="chip"><i data-lucide="zap"></i> Performance Optimization</span>
+        <span class="chip"><i data-lucide="shield-check"></i> System Reliability</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-header center">
+        <p class="eyebrow center"><span>Featured Work</span></p>
+        <h2 class="section-title center reveal-up">Things I’ve Built</h2>
+        <p class="section-sub center reveal-up">
+          Production-ready mobile applications and web management platforms solving real problems.
+        </p>
+      </div>
+
+      <div class="project-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="mobile"><i data-lucide="smartphone"></i> Mobile Apps</button>
+        <button class="filter-btn" data-filter="web"><i data-lucide="globe"></i> Web Platforms</button>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- Project 1: SalesPro -->
+        <article class="glass-card project-card reveal-up" data-cat="mobile">
+          <div class="project-thumb">
+            <img src="assets/salepro.jpeg" alt="SalesPro App Screenshot" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-cat-badge"><i data-lucide="smartphone"></i> Mobile App</span>
+              <span class="project-index">01</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3>SalesPro</h3>
+              <span class="project-status in-production">Production</span>
+            </div>
+            <p class="project-tag">Sales &amp; Distribution Management System</p>
+            <p class="project-desc">
+              A comprehensive mobile enterprise application streamlining wholesale and retail distribution. Integrates multi-tiered role authorization (Admin, Sales Representative, Customer), real-time order processing, invoice management, payment collections, and live KPI reporting.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge"><i data-lucide="smartphone"></i> Flutter</span>
+              <span class="tech-badge"><i data-lucide="flame"></i> Firebase</span>
+              <span class="tech-badge"><i data-lucide="network"></i> REST API</span>
+              <span class="tech-badge"><i data-lucide="shield"></i> Role-Based Auth</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002/salepro" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i data-lucide="github"></i> GitHub Code
+              </a>
+              <a href="https://youtube.com/shorts/FKArF3VEJRQ?si=Eu25f70VJqh5y1pG" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i data-lucide="play-circle"></i> Live Video Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Garbage Management System -->
+        <article class="glass-card project-card reveal-up delay-1" data-cat="web">
+          <div class="project-thumb">
+            <img src="assets/garb.jpg" alt="Garbage Management System" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-cat-badge"><i data-lucide="globe"></i> Web System</span>
+              <span class="project-index">02</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3>EcoTrack Garbage Management</h3>
+              <span class="project-status completed">Completed</span>
+            </div>
+            <p class="project-tag">Smart Waste Collection &amp; Tracking Platform</p>
+            <p class="project-desc">
+              A robust web platform engineered for municipal operations to optimize urban waste logistics. Features automated collection scheduling, driver vehicle dispatching, zone monitoring, citizen request logging, and analytical breakdown dashboards.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge"><i data-lucide="server"></i> Laravel</span>
+              <span class="tech-badge"><i data-lucide="database"></i> MySQL</span>
+              <span class="tech-badge"><i data-lucide="layout"></i> Bootstrap</span>
+              <span class="tech-badge"><i data-lucide="bar-chart-2"></i> Analytics</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002/EcoTrack" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i data-lucide="github"></i> GitHub Code
+              </a>
+              <a href="https://youtu.be/Q2GaP8cKTSc?si=nZWryQSHnDuj630z" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i data-lucide="play-circle"></i> Video Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: AttendFlow -->
+        <article class="glass-card project-card reveal-up delay-2" data-cat="mobile">
+          <div class="project-thumb">
+            <img src="assets/attendpro.jpeg" alt="AttendFlow App" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-cat-badge"><i data-lucide="smartphone"></i> Mobile App</span>
+              <span class="project-index">03</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3>AttendFlow (AttendPro)</h3>
+              <span class="project-status in-production">Production</span>
+            </div>
+            <p class="project-tag">Smart Attendance &amp; Productivity App</p>
+            <p class="project-desc">
+              A lightweight, highly responsive mobile utility for logging employee attendance, tracking check-in/out timestamps, calculating working hours, and providing managers with instant visual statistics and monthly attendance summaries.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge"><i data-lucide="smartphone"></i> Flutter</span>
+              <span class="tech-badge"><i data-lucide="code"></i> Dart</span>
+              <span class="tech-badge"><i data-lucide="clock"></i> Time Tracking</span>
+              <span class="tech-badge"><i data-lucide="pie-chart"></i> Metrics UI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002/attendpro2" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i data-lucide="github"></i> GitHub Code
+              </a>
+              <a href="https://youtube.com/shorts/uWZHXuTnygs?si=RR7VJw9w0FKIWWxu" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i data-lucide="play-circle"></i> Video Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Worker Safety & Compliance -->
+        <article class="glass-card project-card reveal-up" data-cat="web">
+          <div class="project-thumb">
+            <img src="assets/worker_safety.jpg" alt="Worker Safety & Compliance Dashboard" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-cat-badge"><i data-lucide="shield-check"></i> Enterprise Web</span>
+              <span class="project-index">04</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3>Worker Safety &amp; Compliance</h3>
+              <span class="project-status enterprise">Labour Dept.</span>
+            </div>
+            <p class="project-tag">Workplace Health, Safety &amp; Audit Platform</p>
+            <p class="project-desc">
+              Developed in engagement with the Department of Labour to digitize workplace regulatory standards, maintain strict safety records, log hazardous incidents, conduct periodic safety audits, and safeguard labor welfare across industrial facilities.
+            </p>
+            <div class="badge-row">
+              <span class="tech-badge"><i data-lucide="terminal"></i> PHP</span>
+              <span class="tech-badge"><i data-lucide="database"></i> MySQL</span>
+              <span class="tech-badge"><i data-lucide="shield-alert"></i> Compliance Audits</span>
+              <span class="tech-badge"><i data-lucide="layout"></i> Responsive UI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AMCNW2002" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i data-lucide="github"></i> GitHub Profile
+              </a>
+              <span class="btn btn-outline btn-sm disabled-badge">
+                <i data-lucide="lock"></i> Enterprise Internal
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- GitHub Repositories Live Section -->
+      <div class="github-repos-section reveal-up">
+        <div class="github-header">
+          <div class="github-title-wrap">
+            <i data-lucide="git-branch" class="gh-head-icon"></i>
+            <div>
+              <h3 class="section-title-sub">Latest GitHub Repositories</h3>
+              <p class="section-sub-desc">Live activity and source code from my GitHub account (@AMCNW2002).</p>
+            </div>
+          </div>
+          <a href="https://github.com/AMCNW2002" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <i data-lucide="external-link"></i> View All Repositories
+          </a>
+        </div>
+        <div class="github-grid" id="githubReposGrid">
+          <div class="github-loading"><i data-lucide="loader-2" class="spin"></i> Syncing repositories from GitHub...</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-header center">
+        <p class="eyebrow center"><span>Get In Touch</span></p>
+        <h2 class="section-title center reveal-up">Let's Build Something Meaningful</h2>
+        <p class="section-sub center reveal-up">
+          Have an exciting project, open role, or freelance inquiry? Reach out anytime.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <form class="glass-card contact-form reveal-up" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="15cc6263-c413-4690-8b4b-9b963f7a1cdd">
+          <div class="form-header">
+            <h3><i data-lucide="mail"></i> Send Me a Direct Message</h3>
+            <p>I typically respond within 24 hours.</p>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">
+              <span>Your Name *</span>
+              <div class="input-wrap">
+                <i data-lucide="user"></i>
+                <input type="text" name="name" placeholder="John Doe" required autocomplete="name">
+              </div>
+            </label>
+            <label class="form-label">
+              <span>Your Email *</span>
+              <div class="input-wrap">
+                <i data-lucide="at-sign"></i>
+                <input type="email" name="email" placeholder="john@example.com" required autocomplete="email">
+              </div>
+            </label>
+          </div>
+
+          <label class="form-label">
+            <span>Subject *</span>
+            <div class="input-wrap">
+              <i data-lucide="bookmark"></i>
+              <input type="text" name="subject" placeholder="Project discussion / Job opportunity" required>
+            </div>
+          </label>
+
+          <label class="form-label">
+            <span>Message *</span>
+            <div class="input-wrap textarea-wrap">
+              <i data-lucide="message-square"></i>
+              <textarea name="message" rows="5" placeholder="Share a few details about your project, timeline, or requirements..." required></textarea>
+            </div>
+          </label>
+
+          <button type="submit" class="btn btn-primary submit-btn" id="sendBtn">
+            <i data-lucide="send"></i>
+            <span>Send Message</span>
+          </button>
+          <div class="form-note" id="formNote" role="status" aria-live="polite"></div>
+        </form>
+
+        <!-- Contact Channels & Quick Cards -->
+        <div class="contact-info reveal-up delay-1">
+          
+          <div class="contact-info-card glass-card">
+            <h3><i data-lucide="sparkles"></i> Direct Connect</h3>
+            <p class="contact-sub-text">Prefer a faster direct channel? Feel free to reach out via WhatsApp, phone, or email.</p>
+
+            <div class="contact-items-stack">
+              <!-- Email with copy -->
+              <div class="contact-item">
+                <div class="contact-item-icon"><i data-lucide="mail"></i></div>
+                <div class="contact-item-details">
+                  <span>Email Address</span>
+                  <a href="mailto:chamindusandaruwan818@gmail.com" class="contact-link">chamindusandaruwan818@gmail.com</a>
+                </div>
+                <button type="button" class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email">
+                  <i data-lucide="copy"></i>
+                </button>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-item">
+                <div class="contact-item-icon"><i data-lucide="phone-call"></i></div>
+                <div class="contact-item-details">
+                  <span>Direct Mobile / Phone</span>
+                  <a href="tel:+94772459526" class="contact-link">+94 77 245 9526</a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-item">
+                <div class="contact-item-icon"><i data-lucide="map-pin"></i></div>
+                <div class="contact-item-details">
+                  <span>Location</span>
+                  <p class="contact-static-text">Sri Lanka (Open to Remote Globally)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Instant Social Buttons -->
+            <div class="creative-social">
+              <a href="https://wa.me/94772459526?text=Hi%20AMC%20Sandaruwan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="c-btn c-btn-wa">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+                  <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                </svg>
+                Chat on WhatsApp
+              </a>
+              <a href="https://www.linkedin.com/in/amc-sandaruwan-b63943389" target="_blank" rel="noopener noreferrer" class="c-btn c-btn-li">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+                  <path
+                    d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+                </svg>
+                Connect on LinkedIn
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-bracket">&lt;</span><span class="logo-text">AMC</span><span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Full Stack Software Engineer &bull; Flutter &amp; Laravel</p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="social-row">
+        <a href="https://wa.me/94772459526" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+            <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/amc-sandaruwan-b63943389" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <a href="https://github.com/AMCNW2002" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-copy">AMC Sandaruwan &bull; &copy; 2026 All rights reserved.</p>
+      <p class="footer-location">Built with clean standards &bull; Matara, Sri Lanka</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification for Copy/Actions -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="assertive"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
