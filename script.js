@@ -390,6 +390,117 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- 13. PROJECT FILTERS ---------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  const projectCarouselViewport = document.getElementById('projectCarouselViewport');
+  const projectCarouselStatus = document.getElementById('projectCarouselStatus');
+  const projectPrevious = document.getElementById('projectPrevious');
+  const projectNext = document.getElementById('projectNext');
+  let visibleProjectCards = [];
+  let currentProjectIndex = 0;
+  let carouselRotation = 0;
+
+  const updateProjectCarousel = () => {
+    if (!projectCarouselViewport) return;
+
+    visibleProjectCards = Array.from(projectCards).filter(card => !card.classList.contains('hidden'));
+    currentProjectIndex = visibleProjectCards.length
+      ? currentProjectIndex % visibleProjectCards.length
+      : 0;
+    carouselRotation = visibleProjectCards.length ? carouselRotation : 0;
+
+    const cardCount = visibleProjectCards.length;
+    const cardWidth = visibleProjectCards[0]?.offsetWidth || projectCarouselViewport.clientWidth;
+    const radius = cardCount > 2
+      ? cardWidth / (2 * Math.tan(Math.PI / cardCount))
+      : cardCount === 2 ? cardWidth * 0.4 : 0;
+    let tallestCard = 0;
+
+    visibleProjectCards.forEach((card, index) => {
+      const angle = index * 360 / cardCount - carouselRotation;
+      const distanceFromFront = Math.abs(((angle + 180) % 360 + 360) % 360 - 180);
+      const opacity = 0.48 + 0.52 * Math.max(0, Math.cos(distanceFromFront * Math.PI / 180));
+      const isActive = index === currentProjectIndex;
+
+      card.style.setProperty('--carousel-angle', `${angle.toFixed(2)}deg`);
+      card.style.setProperty('--carousel-radius', `${radius.toFixed(1)}px`);
+      card.style.setProperty('--carousel-opacity', opacity.toFixed(2));
+      card.style.zIndex = isActive ? '2' : '1';
+      card.inert = !isActive;
+      card.setAttribute('aria-hidden', String(!isActive));
+      tallestCard = Math.max(tallestCard, card.offsetHeight);
+    });
+
+    projectCarouselViewport.style.height = `${Math.ceil(tallestCard * 1400 / Math.max(1, 1400 - radius))}px`;
+
+    projectCards.forEach(card => {
+      if (card.classList.contains('hidden')) {
+        card.inert = true;
+        card.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    const hasProjects = cardCount > 0;
+    const activeTitle = visibleProjectCards[currentProjectIndex]?.querySelector('h3')?.textContent?.trim();
+    if (projectCarouselStatus) {
+      projectCarouselStatus.textContent = hasProjects
+        ? `${String(currentProjectIndex + 1).padStart(2, '0')} / ${String(cardCount).padStart(2, '0')} · ${activeTitle}`
+        : 'No projects';
+    }
+    if (projectPrevious) projectPrevious.disabled = cardCount < 2;
+    if (projectNext) projectNext.disabled = cardCount < 2;
+  };
+
+  const moveProject = direction => {
+    if (visibleProjectCards.length < 2) return;
+    currentProjectIndex = (currentProjectIndex + direction + visibleProjectCards.length) % visibleProjectCards.length;
+    carouselRotation += direction * 360 / visibleProjectCards.length;
+    updateProjectCarousel();
+  };
+
+  projectPrevious?.addEventListener('click', () => moveProject(-1));
+  projectNext?.addEventListener('click', () => moveProject(1));
+
+  if (projectCarouselViewport) {
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let dragged = false;
+
+    projectCarouselViewport.addEventListener('pointerdown', event => {
+      if (event.button !== 0) return;
+      pointerStartX = event.clientX;
+      pointerStartY = event.clientY;
+      dragged = false;
+      projectCarouselViewport.setPointerCapture(event.pointerId);
+    });
+
+    projectCarouselViewport.addEventListener('pointerup', event => {
+      const deltaX = event.clientX - pointerStartX;
+      const deltaY = event.clientY - pointerStartY;
+      if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        dragged = true;
+        moveProject(deltaX < 0 ? 1 : -1);
+        setTimeout(() => { dragged = false; }, 0);
+      }
+    });
+
+    projectCarouselViewport.addEventListener('click', event => {
+      if (!dragged) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
+
+    projectCarouselViewport.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        moveProject(-1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        moveProject(1);
+      }
+    });
+
+    window.addEventListener('resize', updateProjectCarousel);
+    updateProjectCarousel();
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -407,6 +518,9 @@ document.addEventListener('DOMContentLoaded', () => {
           card.classList.add('hidden');
         }
       });
+      currentProjectIndex = 0;
+      carouselRotation = 0;
+      requestAnimationFrame(updateProjectCarousel);
     });
   });
 
