@@ -642,7 +642,9 @@
         <button class="filter-btn" data-filter="web"><i data-lucide="globe"></i> Web Platforms</button>
       </div>
 
-      <div class="project-grid">
+      <div class="project-carousel" id="projectCarousel">
+        <div class="project-carousel-viewport" id="projectCarouselViewport" role="region" aria-roledescription="carousel" aria-label="Featured projects" tabindex="0">
+          <div class="project-grid">
 
         <!-- Project 1: SalesPro -->
         <article class="glass-card project-card reveal-up" data-cat="mobile">
@@ -784,6 +786,17 @@
           </div>
         </article>
 
+      </div>
+        </div>
+        <div class="project-carousel-controls">
+          <button class="btn btn-outline btn-sm" id="projectPrevious" type="button" aria-label="Previous project">
+            <i data-lucide="chevron-left"></i> Previous
+          </button>
+          <span class="project-carousel-status" id="projectCarouselStatus" aria-live="polite">01 / 04</span>
+          <button class="btn btn-outline btn-sm" id="projectNext" type="button" aria-label="Next project">
+            Next <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
       </div>
 
       <!-- GitHub Repositories Live Section -->
@@ -983,6 +996,4 @@
   <script src="script.js"></script>
 </body>
 
-
-  
 </html>
