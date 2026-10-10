@@ -3323,3 +3323,130 @@ body {
     transform: none !important;
   }
 }
+
+.project-carousel-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  perspective: 1400px;
+  perspective-origin: 50% 44%;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.project-carousel-viewport:active {
+  cursor: grabbing;
+}
+
+.project-carousel-viewport:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: var(--radius-xl);
+}
+
+.project-carousel-viewport .project-grid {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  perspective: none;
+  transform-style: preserve-3d;
+}
+
+.project-carousel-viewport .project-card,
+.project-carousel-viewport .project-card:hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(100%, 680px);
+  height: auto;
+  backface-visibility: hidden;
+  transform: translate(-50%, -50%) rotateY(var(--carousel-angle, 0deg)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(var(--carousel-radius, 0px));
+  opacity: var(--carousel-opacity, 1);
+  transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.75s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .project-carousel-viewport .project-card,
+  .project-carousel-viewport .project-card:hover {
+    width: calc(100% - 32px);
+  }
+}
+
+.project-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px auto 0;
+}
+
+.project-carousel-controls .btn {
+  min-width: 116px;
+  justify-content: center;
+}
+
+.project-carousel-controls .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.project-carousel-controls svg {
+  width: 16px;
+  height: 16px;
+}
+
+.project-carousel-status {
+  min-width: 150px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .project-carousel-controls {
+    gap: 8px;
+  }
+
+  .project-carousel-controls .btn {
+    min-width: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 11px;
+  }
+
+  .project-carousel-status {
+    min-width: 0;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-carousel-viewport .project-card,
+  .project-carousel-viewport .project-card:hover {
+    transition: none;
+    will-change: auto;
+  }
+}
+
+@media (pointer: coarse) and (prefers-reduced-motion: no-preference) {
+  .hero-showcase-card {
+    animation: mobile-showcase-tilt 7s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes mobile-showcase-tilt {
+  0%, 100% {
+    transform: perspective(1100px) rotateX(1.5deg) rotateY(-2deg) translateY(0);
+  }
+  50% {
+    transform: perspective(1100px) rotateX(-1.5deg) rotateY(2deg) translateY(-5px);
+  }
+}
